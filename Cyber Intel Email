@@ -116,28 +116,34 @@ if __name__ == "__main__":
   url2()
   print(data1)
 
+#data1 = data1.replace('\xa0','')
+#data1 = data1.replace('\u2014','')
+#data1 = data1.replace('\u2013','')
+#data1 = data1.replace('\u200b','')
+#data1 = data1.encode('utf-8')
+
 
 #https://mailtrap.io/blog/python-send-email/#:~:text=Base64%20encoding%3A%20Since%20email%20protocols,is%20used%20for%20this%20purpose.
 # create mail object
-receivers = ['x@gmail.com']
+receivers = ['dakotakey175@gmail.com', 'dakotakey175@gmail.com']
 
-
-mail = mt.Mail(
-    sender=mt.Address(email="mailtrap@mailtrap.com", name=" News Update"),
-    to=[mt.Address(email=receivers[0])],
+for x in receivers:
+  mail = mt.Mail(
+    sender=mt.Address(email="mailtrap@terminalbrew.com", name="TerminalBrew News Update"),
+    to=[mt.Address(email=x)],
     subject="Cyber Intel Update",
     text= "Current cyber intel news regarding your areas of interest" + "\n" + data1,
 )
 
 # create client and send
-client = mt.MailtrapClient(token="")
-client.send(mail)
+  client = mt.MailtrapClient(token="c0530a3c4e688698ed4d4598dd05f43c")
+  client.send(mail)
 
 
 '''
 
-sender = "Email Testing <mailtrap@mailtrap.com>"
-receiver = "A Test User <xxx@gmail.com>"
+sender = "Email Testing <mailtrap@terminalbrew.com>"
+receiver = "A Test User <dakotakey175@gmail.com>"
 
 message = f"""\
 Subject: Hi Mailtrap
@@ -153,7 +159,7 @@ Cyber Intel News.
 
 with smtplib.SMTP("bulk.smtp.mailtrap.io", 587) as server:
     server.starttls()
-    server.login("api", "")
+    server.login("api", "c0530a3c4e688698ed4d4598dd05f43c")
     server.sendmail(sender, receiver, message)
 
 '''
