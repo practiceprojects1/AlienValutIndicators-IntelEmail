@@ -16,7 +16,7 @@ import mailtrap as mt
 
 
 l = ["Russia", "China", "Chinese", "Iran", "Iranian", "Iranian","Microsoft", "Cisco"]
-#https://mailtrap.io/sending/domains/95744add-a967-4fd9-90a1-e2acde996a0e?current_tab=smtp_settings
+#https://mailtrap.io/sending/domains/
 data1 = ''
 def url1():
     global data1
@@ -116,11 +116,7 @@ if __name__ == "__main__":
   url2()
   print(data1)
 
-#data1 = data1.replace('\xa0','')
-#data1 = data1.replace('\u2014','')
-#data1 = data1.replace('\u2013','')
-#data1 = data1.replace('\u200b','')
-#data1 = data1.encode('utf-8')
+
 
 
 #https://mailtrap.io/blog/python-send-email/#:~:text=Base64%20encoding%3A%20Since%20email%20protocols,is%20used%20for%20this%20purpose.
@@ -129,7 +125,7 @@ receivers = ['xxx@gmail.com', 'xxx@gmail.com']
 
 for x in receivers:
   mail = mt.Mail(
-    sender=mt.Address(email="mailtrap@xxx.com", name="TerminalBrew News Update"),
+    sender=mt.Address(email="mailtrap@xxx.com", name=" News Update"),
     to=[mt.Address(email=x)],
     subject="Cyber Intel Update",
     text= "Current cyber intel news regarding your areas of interest" + "\n" + data1,
