@@ -11,7 +11,7 @@ import mailtrap as mt
 
 
 
-#schedule/open links and look for iocs
+
 
 
 
@@ -125,25 +125,26 @@ if __name__ == "__main__":
 
 #https://mailtrap.io/blog/python-send-email/#:~:text=Base64%20encoding%3A%20Since%20email%20protocols,is%20used%20for%20this%20purpose.
 # create mail object
-receivers = ['dakotakey175@gmail.com', 'dakotakey175@gmail.com']
+receivers = ['xxx@gmail.com', 'xxx@gmail.com']
 
 for x in receivers:
   mail = mt.Mail(
-    sender=mt.Address(email="mailtrap@terminalbrew.com", name="TerminalBrew News Update"),
+    sender=mt.Address(email="mailtrap@xxx.com", name="TerminalBrew News Update"),
     to=[mt.Address(email=x)],
     subject="Cyber Intel Update",
     text= "Current cyber intel news regarding your areas of interest" + "\n" + data1,
 )
 
 # create client and send
-  client = mt.MailtrapClient(token="c0530a3c4e688698ed4d4598dd05f43c")
+  client = mt.MailtrapClient(token="<API TOKEN GOES HERE>")
   client.send(mail)
 
 
+#SMTPLIB option
 '''
 
-sender = "Email Testing <mailtrap@terminalbrew.com>"
-receiver = "A Test User <dakotakey175@gmail.com>"
+sender = "Email Testing <mailtrap@xxx.com>"
+receiver = "A Test User <xxx@gmail.com>"
 
 message = f"""\
 Subject: Hi Mailtrap
@@ -159,7 +160,7 @@ Cyber Intel News.
 
 with smtplib.SMTP("bulk.smtp.mailtrap.io", 587) as server:
     server.starttls()
-    server.login("api", "c0530a3c4e688698ed4d4598dd05f43c")
+    server.login("api", "<API TOKEN GOES HERE>")
     server.sendmail(sender, receiver, message)
 
 '''
