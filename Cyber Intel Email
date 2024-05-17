@@ -11,10 +11,6 @@ import mailtrap as mt
 
 
 
-
-
-
-
 l = ["Russia", "China", "Chinese", "Iran", "Iranian", "Iranian","Microsoft", "Cisco"]
 #https://mailtrap.io/sending/domains/
 data1 = ''
