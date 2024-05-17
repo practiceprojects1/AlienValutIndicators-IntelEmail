@@ -1,5 +1,4 @@
 #https://github.com/splunk/security_content/blob/develop/detections/endpoint/local_account_discovery_with_net.yml
-#dhk175x2
 
 #https://github.com/AlienVault-OTX/OTX-Python-SDK
 
@@ -8,7 +7,7 @@
 from OTXv2 import OTXv2, IndicatorTypes
 from pandas.io.json import *
 from datetime import datetime, timedelta
-otx = OTXv2("47efc4e130be7030ef49b38f51aec22cef0b5b761963bb655ddf7c89cdd09d74")
+otx = OTXv2("<API KEY>")
 
 l = ['65907dc1aa71349e21f223a7', '6639c5a2a700d80b13f64258', '6639e815d63e06c21679e9da']
 
